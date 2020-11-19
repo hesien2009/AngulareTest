@@ -1,0 +1,52 @@
+<p>category-component works!</p>
+<input #CateName type="text">
+<div *ngIf='Categories.length>0 ; then Exists else NotExists'></div>
+
+<ng-template #Exists>
+    <div *ngFor='let r of Categories,index as parentIndex;trackBy:tracing ' mat-button color="primary">
+        <ul>
+            <li>{{r.cate}}
+                <button (click)='addcategory(parentIndex,CateName.value)' class="btn btn-control"
+                    value="Add">Add</button>
+            </li>
+
+
+            <ul>
+                <!-- <li *ngFor='let c of r.Rows,index as i'> {{c.id}} - {{c.name}}
+                    <button  (click)='RemoveElementFromObjectArray(r.cate,c.id)' class="btn btncon" value="remove">Remove</button>
+                </li>-->
+
+                <div *ngIf='r.Rows.length>0'>
+                    <li *ngFor='let c of r.Rows,index as i'> {{c.id}} - {{c.name}}
+                        <button (click)='removecategory(parentIndex,i)' class="btn-control mat-button"
+                            value="remove">Remove</button>
+
+                    </li>
+                </div>
+
+            </ul>
+
+        </ul>
+    </div>
+
+</ng-template>
+<ng-template #NotExists>
+    <div>
+        No Rows
+    </div>
+
+</ng-template>
+
+<ul>
+    <li [class.active]="ViewModel=='Products'">
+        <a (click)="setView('Products')">Products</a>
+    </li>
+    <li [class.active]="ViewModel=='Category'">
+        <a (click)="setView('Category')">Category</a>
+    </li>
+</ul>
+<div [ngSwitch]="ViewModel">
+    <div *ngSwitchCase="'Products'"> You on Products Page</div>
+    <div *ngSwitchCase="'Category'"> You on Category Page</div>
+</div>
+<input type="text" InputFormat [format]="'toLowerCase'" >

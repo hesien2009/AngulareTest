@@ -1,0 +1,28 @@
+<p>product-component works!</p>
+<br>
+<div><button #Product1 (click)='getallproducts(Product1.value)'>Get Products</button></div>
+
+<div>
+    <ul *ngFor='let product of AllDataProducts'>
+        <li>{{product}}</li>
+    </ul>
+</div>
+<input #FirstNamee (keyup.enter)='getallproducts(FirstNamee.value)' value="First Name" type="text">
+<h1>{{AllDataProducts}}</h1>
+
+<input  [(ngModel)]="FirstName"
+ (keyup.enter)='CurrentProduct(FirstName)'  type="text">
+ <div><h1>{{FirstName}}</h1></div>
+
+ <input  (keyup.enter)='FirstName=$event.target.value; CurrentProduct(FirstNamee)' value="First Name" type="text">
+<h1>{{FirstName}}</h1>
+
+<i class="fas fa-heart"></i>
+<span class="fas fa-heart"
+[class.fa-heart]="isfavorite"
+[class.suit-heart]="isfavorite"
+ (click)='OnChange()'>
+</span>
+
+<span>{{ Adress | reduceSentence:40}}</span>
+ 
