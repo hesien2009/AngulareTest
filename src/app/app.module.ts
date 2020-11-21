@@ -13,7 +13,8 @@ import { LoginReactiveComponent } from './login/login-reactive/login-reactive.co
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { TodolistComponent } from './todolist/todolist.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +24,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     InputFormatDirective,
     LoginReactiveComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [DbservicesService],
   bootstrap: [AppComponent]

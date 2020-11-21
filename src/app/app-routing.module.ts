@@ -4,6 +4,7 @@ import { CategoryComponentComponent } from './Category/category-component/catego
 import { HomeComponent } from './home/home.component';
 import { LoginReactiveComponent } from './login/login-reactive/login-reactive.component';
 import { ProductComponentComponent } from './product-component/product-component.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
   {path:'login/login-reactive',component : LoginReactiveComponent},
   {path:'product-component',component : ProductComponentComponent},
   {path:'home',component : HomeComponent},
-
+  {path:'todolist',component : TodolistComponent},
 ];
 
 @NgModule({

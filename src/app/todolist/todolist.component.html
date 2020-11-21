@@ -1,0 +1,10 @@
+<p>todolist works!</p>
+<div>
+    <input class="form-control" #item (keyup.enter)="addLanguage(item)">
+    <div  *ngIf="Languages" class="list-group">
+        <button @fade class="list-group-item" *ngFor="let item of Languages" (click)="removeLanguage(item)">
+            {{item}}
+         </button>
+    </div>
+
+</div>
